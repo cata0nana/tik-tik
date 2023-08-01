@@ -89,8 +89,9 @@ Run git clone https://github.com/kanaka/websockify $HOME/noVNC/utils/websockify
 ######################################
 ######################################
 
-RUN wget https://ftp.mozilla.org/pub/firefox/releases/52.0.1esr/firefox-52.0.1esr.linux-x86_64.sdk.tar.bz2 
-RUN tar xvf firefox-52.0.1esr.linux-x86_64.sdk.tar.bz2 -C /root/
+RUN wget https://ftp.mozilla.org/pub/firefox/releases/99.0b8/linux-x86_64/en-GB/firefox-99.0b8.tar.bz2
+#https://ftp.mozilla.org/pub/firefox/releases/99.0b8/linux-x86_64/en-GB/firefox-99.0b8.tar.bz2
+RUN tar xvf firefox-99.0b8.tar.bz2 -C /root/
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
 RUN dpkg -i google-chrome-stable_current_amd64.deb
 ######################################
