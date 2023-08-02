@@ -61,24 +61,24 @@ RUN pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 sel
 
 # Add sample user
 #RUN update-rc.d tor enable
-######RUN ssh-keygen -q -t rsa -N '' -f /id_rsa
+RUN ssh-keygen -q -t rsa -N '' -f /id_rsa
 
-######RUN echo "root:1" | /usr/sbin/chpasswd
-######RUN addgroup uno
-######RUN useradd -m -s /bin/bash -g uno uno
-######RUN echo "uno:1" | /usr/sbin/chpasswd
-######RUN echo "uno    ALL=(ALL) ALL" >> /etc/sudoers
+RUN echo "root:1" | /usr/sbin/chpasswd
+RUN addgroup uno
+RUN useradd -m -s /bin/bash -g uno uno
+RUN echo "uno:1" | /usr/sbin/chpasswd
+RUN echo "uno    ALL=(ALL) ALL" >> /etc/sudoers
 ###################################################################################################
 ##################################################################################################
 ##################################################################################################
 ######RUN ls /
 # Copy tigerVNC binaries
-######ADD tigervnc-1.8.0.x86_64 /
+ADD tigervnc-1.8.0.x86_64 /
 #COPY  tigervnc-1.8.0.x86_64.tar.gz /
 #RUN tar xvf tigervnc-1.8.0.x86_64.tar.gz -C /root/
 #ADD /root/tigervnc-1.8.0.x86_64 /
 # Clone noVNC.
-######RUN git clone https://github.com/novnc/noVNC.git $HOME/noVNC
+RUN git clone https://github.com/novnc/noVNC.git $HOME/noVNC
 
 # Clone websockify for noVNCfor noVNC
 
