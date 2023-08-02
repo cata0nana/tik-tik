@@ -120,14 +120,14 @@ ADD AZ /root/Desktop
 # Docker config
 
 
-######RUN printf "123123123\n123123123\n\n" | vncpasswd
+RUN printf "123123123\n123123123\n\n" | vncpasswd
 ######
-######RUN sed -i 's/@"/@" --no-sandbox/' /opt/google/chrome/google-chrome
+#RUN sed -i 's/@"/@" --no-sandbox/' /opt/google/chrome/google-chrome
 
 ######RUN  rm firefox-52.0.1esr.linux-x86_64.sdk.tar.bz2
 ######RUN  rm google-chrome-stable_current_amd64.deb
 
 
-######VOLUME ["/etc/ssh"]
-######EXPOSE 3389 22 9001 993 7513 1984 1985 1022
+VOLUME ["/etc/ssh"]
+EXPOSE 3389 22 9001 993 7513 1984 1985 1022
 CMD ["/bin/bash", "/root/startup.sh"]
