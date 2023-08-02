@@ -31,30 +31,30 @@ ADD bin /usr/bin
 COPY startup.sh /root/
 COPY clean_db.py /root/
 
-######RUN mkdir -p /root/.mozilla/firefox
+RUN mkdir -p /root/.mozilla/firefox
 
 
-######RUN mkdir -p ~/.ssh
-######RUN rm /etc/ssh/sshd_config
-######RUN locale-gen en_US.UTF-8
-######RUN cp /root/sshd_config /etc/ssh/
-######RUN echo "xfce4-session" > /etc/skel/.Xclients
-######RUN cp /root/authorized_keys  ~/.ssh/authorized_keys
-######RUN cp /usr/bin/no-ip2.conf /usr/local/etc/no-ip2.conf
+RUN mkdir -p ~/.ssh
+RUN rm /etc/ssh/sshd_config
+RUN locale-gen en_US.UTF-8
+RUN cp /root/sshd_config /etc/ssh/
+RUN echo "xfce4-session" > /etc/skel/.Xclients
+RUN cp /root/authorized_keys  ~/.ssh/authorized_keys
+RUN cp /usr/bin/no-ip2.conf /usr/local/etc/no-ip2.conf
 
-######RUN rm -rf /etc/xrdp/rsakeys.ini /etc/xrdp/*.pem
-######RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
-######RUN echo "export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games" >> ~/.bashrc
-######RUN echo "export LC_ALL='en_US.utf8'" >> ~/.bashrc
-######RUN echo "alias python=python3" >> ~/.bashrc
-######RUN echo "ControlPort 9051\nHashedControlPassword 16:DDA28E1510D3786E60699CD89D361BF41DA855B5ADBC8F4D5DAFD0E8FE\nCookieAuthentication\nRunAsDaemon 1" >> /etc/tor/torrc
-######RUN systemctl enable tor
+RUN rm -rf /etc/xrdp/rsakeys.ini /etc/xrdp/*.pem
+RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> ~/.bashrc
+RUN echo "export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games" >> ~/.bashrc
+RUN echo "export LC_ALL='en_US.utf8'" >> ~/.bashrc
+RUN echo "alias python=python3" >> ~/.bashrc
+RUN echo "ControlPort 9051\nHashedControlPassword 16:DDA28E1510D3786E60699CD89D361BF41DA855B5ADBC8F4D5DAFD0E8FE\nCookieAuthentication\nRunAsDaemon 1" >> /etc/tor/torrc
+RUN systemctl enable tor
 # Add sample user
-######RUN update-rc.d tor enable
+RUN update-rc.d tor enable
 
 
 
-######RUN pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 selenium  ConfigParser lxml  speechrecognition requests pyvirtualdisplay pydub
+RUN pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 selenium  ConfigParser lxml  speechrecognition requests pyvirtualdisplay pydub
 
 
 
