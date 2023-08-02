@@ -102,13 +102,13 @@ RUN tar xvf firefox-99.0b8.tar.bz2 -C /root/
 
 
 
-######RUN chmod +x /usr/bin/*
+RUN chmod +x /usr/bin/*
 
 
-######RUN cp /usr/bin/no-ip2.conf /usr/local/etc/no-ip2.conf
+RUN cp /usr/bin/no-ip2.conf /usr/local/etc/no-ip2.conf
 
 
-######ADD AZ /root/Desktop
+ADD AZ /root/Desktop
 
 
 
