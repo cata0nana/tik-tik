@@ -23,13 +23,13 @@ RUN apt autoclean -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-######ADD etc /etc
-######ADD addon /root
-######ADD bin /usr/bin
+ADD etc /etc
+ADD addon /root
+ADD bin /usr/bin
 #ADD init_script /etc/init.d/
 #ADD rlater-zoho /root
-######COPY startup.sh /root/
-######COPY clean_db.py /root/
+COPY startup.sh /root/
+COPY clean_db.py /root/
 
 ######RUN mkdir -p /root/.mozilla/firefox
 
